@@ -164,7 +164,7 @@
 	          <epay_adminform translate="title" module="epay">
 	            <title>ePay Payment Request</title>
 	            <sort_order>99</sort_order>
-	            <action>epay/adminhtml_paymentrequest</action>
+	            <action>adminhtml/paymentrequest</action>
 	          </epay_adminform>
 	        </children>
 	      </sales>
@@ -208,6 +208,18 @@
 		<label>lead capture form</label>
 		<template>page/leadcapture.phtml</template>
 	</interest_form> 
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mage_Epay before="Mage_Adminhtml">Mage_Epay_Adminhtml</Mage_Epay>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+   </admin>
 
     <admin>
         <routers>
